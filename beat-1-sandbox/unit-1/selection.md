@@ -1,86 +1,21 @@
-# Unit 1 — Issue Selection
-
-Path: `beat-1-sandbox/unit-1/selection.md`
-
-Record of the issue carried into Unit 2, and of the evaluation runs that produced
-`eval-run.txt`. This file is graded at the path above; a copy kept anywhere else in
-the repository is not read.
-
-Complete every labelled field below. Each is graded on its own; content placed under the
-wrong label is not graded.
-
----
-
-## Selected issue
-
-**Issue link**
-
-[The individual Path Review issue page. A link to the repository or the issue list
-does not satisfy this field.]
-
-**Verdict output**
-
-[Your skill's live-mode output for this issue, pasted verbatim and ending with the
-fenced JSON verdict block. A summary does not satisfy this field.]
-
-**The verdict must record `accept` for this issue.** Choose an issue your own skill
-accepts. If your skill rejects every candidate you try, that is a signal about your
-rubric rather than about the issues: revise it and re-run — retries are unlimited and a
-partial re-run costs about $0.20 — or run the skill on different candidates. Output
-recording `reject` for the issue you chose earns no credit for this field.
-
-```
-paste the output here, including the closing JSON block
-```
-
----
-
-## Eval iterations
-
-Quote source text directly in each field below. Paraphrase does not satisfy them.
-
 **Run history**
 
-[The agreement score of each run you did, in order. A single run is a complete answer if
-only one run occurred. **The last score in your list must match the agreement line in the
-`eval-run.txt` you committed** — that file is the record of your final run.]
+Run 1: 17/20 scored items.
+
+Partial re-run of issue-01, issue-15, and issue-19: 3/3.
+
+Final full run: 18/20 scored items (PASS).
 
 **Issue analysis**
 
-[One scored issue, identified by id (`issue-01` through `issue-20`; the `calib-`
-issues are not scored). State your rubric's decision, the gold label, and the
-reasoning that produced your rubric's result.]
+issue-09: My rubric decided reject, while the gold label was accept. The Newcomer-sized scope check caused the rejection. My rubric interpreted the issue as not meeting the bounded newcomer-scope requirement. Because this is a required check, failing it caused the final verdict to be reject.
 
 **Check rationale**
 
-[One check from the `rubric.md` uploaded to `tools/issue-select/`, quoted as it is
-currently written, with the reasoning behind its current form.]
+"Newcomer-sized scope — Pass if the issue describes one bounded problem or contribution with a clear goal. Judge the required outcome, not the length of the issue or the number of possible implementation ideas listed. Optional, additional, or suggested improvements do not make an otherwise bounded issue fail. Fail if the issue is explicitly an umbrella/tracking issue intended to be split into separate work, is a pure usage/support question, requires core-internal changes according to a maintainer, or has unresolved design debate with no maintainer-settled direction. Also fail when the issue's history shows multiple abandoned contributor attempts or closed unmerged PRs indicating that the task has repeatedly proven difficult to complete. A long or technically detailed issue without that history can still pass."
+
+I used this wording because my earlier version treated some long or technically detailed issues as too large even when the actual requested contribution was bounded. I changed the check to focus on the required outcome instead of issue length or optional suggestions. I also added issue history because repeated abandoned attempts can show that an apparently simple issue is actually difficult for a first contribution.
 
 **Trade-offs**
 
-[What the quoted check gives up. Any one of these is a complete answer: an issue whose
-result it changes, a canary you re-ran with `--only`, a case you accept it will miss, or a
-stated reason nothing changed elsewhere. "Nothing changed, and here is how I know" earns
-the point in full when the reason follows.]
-
----
-
-## Selection rationale
-
-Graded on whether all three are answered, in your own words. Not on how good the
-reasoning is, and not on length — a short honest answer to each earns the full marks.
-This is also the basis for the claim comment you write in Unit 2.
-
-**Selection rationale**
-
-[Answer all three:
-
-1. The issue's fit to your interests and to the time available.
-2. What the verdict identified correctly, and what you weighed that the rubric could
-   not.
-3. The anticipated difficulty in claiming it.]
-
----
-
-Related paths: `eval-run.txt` in this directory; your skill's files in
-`tools/issue-select/`.
+Before the revision, issue-01 and issue-19 were rejected even though their gold labels were accept, while issue-15 was accepted even though its gold label was reject. I re-ran those three issues with `--only`, and the revised rubric agreed on all three (3/3). The final full run still disagreed on issue-09 and issue-20 and finished at 18/20.
